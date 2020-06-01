@@ -1,5 +1,5 @@
-.App {
-  text-align: center;
+a, a:hover {
+  text-decoration: none;
 }
 
 .App-logo {
@@ -35,4 +35,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+/* custome css */
+.homePage,  .projectPage, .contactPage, .aboutPage, .blogPage{
+  margin: 50px 0;
 }

@@ -1,0 +1,10 @@
+.section_bg {
+    background: #033507;
+}
+a.menuItem {
+    color: #f29898 !important;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: .5s ease;
+}
