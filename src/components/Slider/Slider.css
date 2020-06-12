@@ -18,8 +18,9 @@
 
 .sliderContent h2 {
     font-size: 40px;
-    font-weight: 400;
+    font-weight: 700;
     text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #1f5775;
     letter-spacing: -3px;
     margin-left: 30px;
@@ -30,4 +31,8 @@
     color: #033507;
     font-weight: 500;
     line-height: 20px;
+}
+.sliderContent p b {
+    color: #dc3545;
+    font-weight: 600;
 }

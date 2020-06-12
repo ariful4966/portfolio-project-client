@@ -46,7 +46,7 @@ const ControlledCarousel = () => {
                                 <p>
                                     <b>Expertise:</b> React.js, JavaScript, ES6, Fortran Material-UI, SPA, Bootstrap-4, HTML5, CSS3 <br/>
                                     <b>Comfortable:</b> Redux.js, Node.js, Express.js, MongoDB, JSON <br/>
-                                    <b>Familiar:</b> React-Native.js PHP, WordPress, jQuery Plugin, MYSQL <br/>
+                                    <b>Familiar:</b> React-Native.js PHP, WordPress, jQuery Plugin, MYSQL , Vue.js, Angular.js<br/>
                                 </p>
                             </div>
                         </Col>

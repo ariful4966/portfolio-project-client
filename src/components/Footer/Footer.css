@@ -95,3 +95,12 @@ h4.footer_heading::before {
 .socialMedia ul li:nth-child(5) a {
     background: #dd4b39;
 }
+a, a:hover{
+    text-decoration: none !important;
+}
+p.copyWrite {
+    text-align: center !important;
+    width: 100%;
+    color: #ed7b7b;
+    margin: 20px 0;
+}

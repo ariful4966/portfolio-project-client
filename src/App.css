@@ -39,6 +39,7 @@ a, a:hover {
 
 
 /* custome css */
-.homePage,  .projectPage, .contactPage, .aboutPage, .blogPage{
-  margin: 50px 0;
+.aboutPage, .blogPage, .contactPage, .homePage, .projectPage {
+  padding: 50px 0;
+  background: #b3d7ff;
 }

@@ -3,8 +3,8 @@
 }
 a.menuItem {
     color: #f29898 !important;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 600;
     text-transform: uppercase;
     transition: .5s ease;
 }

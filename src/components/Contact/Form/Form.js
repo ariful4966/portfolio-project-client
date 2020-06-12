@@ -25,7 +25,7 @@ const Form = () => {
     }
     const handleSubmit=(e)=>{
         e.preventDefault();
-        axios.post('http://localhost:3001/api/forma',data)
+        axios.post('https://portfolio-project-contact-form.herokuapp.com/api/forma',data)
         .then(res=>{
             setSent(true)
         },resetForm()).catch(()=>{
@@ -68,7 +68,7 @@ const Form = () => {
                 }
                 
                 <div className="btn">
-                    <button className='btn btn-primary' type="submit">Submit</button>
+                    <button className='btn btnSubmit ' type="submit">Submit</button>
                 </div>
             </form>
         </div>

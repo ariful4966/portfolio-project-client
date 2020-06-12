@@ -1,0 +1,23 @@
+.textArea.singleItem textArea {
+    background: none;
+    border: 1px solid #033507;
+    border-radius: 10px;
+    padding: 10px;
+}
+button.btnSubmit {
+    background: #033507;
+    color: #ed7b7b;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: .5s;
+    border: 1px solid #ed7b7b;
+}
+
+button.btn.btnSubmit:hover {
+    color: #fff;
+}
+
+button.btn.btnSubmit:hover {
+    background: #ed7b7b;
+    color: #033507;
+}

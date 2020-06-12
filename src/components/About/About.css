@@ -2,3 +2,59 @@
     width: 100%;
     height: 100%;
 }
+.adminContent h2 {
+    font-family: 'eras itc', sans-serif;
+    font-weight: 700;
+    color: #054213;
+    font-size: 70px;
+}
+.adminContent .adminTitle {
+    font-size: 40px;
+    font-family: monospace;
+    color: #6b3e3e;
+    font-weight: 700;
+}
+.adminContent p {
+    color: #445400;
+    font-size: 15px;
+    font-weight: 400;
+}
+.adminContent a {
+    text-decoration: none;
+    background: #f29898;
+    color: #033507;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 5px;
+    font-weight: 600;
+    border: 1px solid #033507;
+    transition: all .5s ease;
+}
+
+
+.adminContent a:hover {
+    background: #033507;
+    color: #f29898;
+    border-color: #f29898;
+}
+.adminContent p {
+    color: #445400;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.adminSkill h3 {
+    color: #4564d1;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.adminSkill ul li {
+    list-style: circle;
+    font-size: 16px;
+    color: #5d1b1b;
+    font-weight: 600;
+    font-size: 14px;
+}

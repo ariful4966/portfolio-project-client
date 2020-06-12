@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faFacebookF, faLinkedinIn, faGithub, faGooglePlusSquare, faGooglePlusG } from '@fortawesome/free-brands-svg-icons'
+import { faTwitter, faFacebookF, faLinkedinIn, faGithub, faGooglePlusSquare, faGooglePlusG, faWeebly } from '@fortawesome/free-brands-svg-icons'
 
 import './Footer.css';
 
@@ -38,7 +38,7 @@ const Footer = () => {
                             <div className="footer_detail">
                                 <ul>
                                     {
-                                        projects.map(pro => <li><a>{pro.name}</a></li>)
+                                        projects.map(pro => <li><a href={pro.url} target="_blank">{pro.name}</a></li>)
                                     }
                                 </ul>
                             </div>
@@ -50,7 +50,7 @@ const Footer = () => {
                             <div className="footer_detail">
                                 <ul>
                                     {
-                                        blogs.map(pro => <li><a href="#">{pro.name}</a></li>)
+                                        blogs.map(pro => <li><a href={pro.url} target="_blank">{pro.name}</a></li>)
                                     }
                                 </ul>
                             </div>
@@ -61,15 +61,18 @@ const Footer = () => {
                             <h4 className="footer_heading">Social Media</h4>
                             <div className="footer_detail socialMedia">
                                 <ul>
-                                    <li><a href="#"><FontAwesomeIcon icon={faFacebookF} /></a></li>
-                                    <li><a href="#"><FontAwesomeIcon icon={faLinkedinIn} /></a></li>
-                                    <li><a href="#"><FontAwesomeIcon icon={faGithub} /></a></li>
-                                    <li><a href="#"><FontAwesomeIcon icon={faTwitter} /></a></li>
-                                    <li><a href="#"><FontAwesomeIcon icon={faGooglePlusG} /></a></li>
+                                    <li><a href="https://www.facebook.com/Md.Ariful.Islam4082" target="_blank"><FontAwesomeIcon icon={faFacebookF} /></a></li>
+                                    <li><a href=" https://www.linkedin.com/in/ariful-islam82/" target="_blank"><FontAwesomeIcon icon={faLinkedinIn} /></a></li>
+                                    <li><a href="https://github.com/ariful4966" target="_blank"><FontAwesomeIcon icon={faGithub} /></a></li>
+                                    <li><a href="https://twitter.com/ariful4082" target="_blank"><FontAwesomeIcon icon={faTwitter} /></a></li>
+                                    <li><a href="https://ariful-islam66.firebaseapp.com/" target="_blank"><FontAwesomeIcon icon={faWeebly} /></a></li>
                                 </ul>
                             </div>
                         </div>
                     </Col>
+                </Row>
+                <Row>
+                    <p className="copyWrite">All right reserved by <a href="/">Ariful Islam</a></p>
                 </Row>
             </Container>
         </div>

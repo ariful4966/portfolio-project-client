@@ -4,17 +4,17 @@
     text-transform: uppercase;
     font-weight: 800;
     font-size: 40px;
-    color: #033507;
+    color: #f29898;
     padding: 15px 0;
     margin: 50px 0;
 }
 
-.homeHeading h2::before {content: '';position: absolute;width: 30%;height: 10px;background: none;border: 1px solid #033507;left: 50%;bottom: 0;transform: translateX(-50%);border-radius: 10px;}
+.homeHeading h2::before {content: '';position: absolute;width: 30%;height: 10px;background: none;border: 1px solid #f29898;left: 50%;bottom: 0;transform: translateX(-50%);border-radius: 10px;}
 
-.homeHeading h2::after {content: '';position: absolute;width: 20px;height: 20px;background: #033507;left: 50%;bottom: -5px;border-radius: 50%;}
+.homeHeading h2::after {content: '';position: absolute;width: 20px;height: 20px;background: #f29898;left: 50%;bottom: -5px;border-radius: 50%;}
 .singleItem {
     text-align: center;
-    border: 1px solid #033507;
+    border: 1px solid #f29898;
     border-radius: 5px;
 }
 
@@ -60,12 +60,11 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(31, 87, 117, 0.2);
+    background: rgb(3, 53, 7);
     left: 0;
     top: 0;
     content: '';
-    transform: skewY(-3deg);
-}
+    transform: skewY(-3deg);}
 .latestBlog .singleDetail {
     text-align: left;
 }
@@ -81,5 +80,12 @@
 
 .singleDetail a:hover {
     background: #ed7b7b;
+    color: #fff;
+}
+.latestProject h4 {
+    color: #fff;
+}
+
+.latestProject p {
     color: #fff;
 }
