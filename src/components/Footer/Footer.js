@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-
-import { Container, Row, Col } from 'react-bootstrap';
+import { faFacebookF, faGithub, faLinkedinIn, faTwitter, faWeebly } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faFacebookF, faLinkedinIn, faGithub, faGooglePlusSquare, faGooglePlusG, faWeebly } from '@fortawesome/free-brands-svg-icons'
-
+import React, { useEffect, useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import './Footer.css';
+
+
 
 const Footer = () => {
 
@@ -13,7 +13,7 @@ const Footer = () => {
     const [blog, setBlog] = useState([]);
     const blogs = blog.slice(0,3);
     useEffect(() => {
-        fetch('https://portfolio-server-00.herokuapp.com/projects')
+        fetch('http://localhost:4000/project')
             .then(res => res.json())
             .then(data => {
                 setProject(data);
@@ -21,7 +21,7 @@ const Footer = () => {
     }, []);
 
     useEffect(() => {
-        fetch('https://portfolio-server-00.herokuapp.com/blogs')
+        fetch('http://localhost:4000/blog')
             .then(res => res.json())
             .then(data => {
                 

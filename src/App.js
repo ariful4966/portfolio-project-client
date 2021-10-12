@@ -1,20 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route
+  BrowserRouter as Router, Route, Switch
 } from "react-router-dom";
-
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import NotFound from './components/NotFound/NotFound';
-import Home from './components/Home/Home';
-import Project from './components/Project/Project';
-import Blog from './components/Blog/Blog';
-import About from './components/About/About';
-import Contact from './components/Contact/Contact';
-
 import './App.css';
+import Footer from './components/Footer/Footer';
+import About from './components/pages/About/About';
+import Blog from './components/pages/Blog/Blog';
+import Contact from './components/pages/Contact/Contact';
+import Home from './components/pages/Home/Home';
+import NotFound from './components/pages/NotFound/NotFound';
+import Project from './components/pages/Project/Project';
+
+
 
 
 
@@ -23,12 +20,8 @@ function App() {
 
   return (
 
-    <div className="App">
       
-
-      {/* for routing */}
       <Router>
-        <Header></Header>
         <Switch>
           <Route  path="/contact">
             <Contact></Contact>
@@ -51,7 +44,6 @@ function App() {
         </Switch>
         <Footer ></Footer>
       </Router>
-    </div>
   );
 }
 
