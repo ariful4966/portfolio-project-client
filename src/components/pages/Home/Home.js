@@ -2,6 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Header from "../../Header/Header";
+import Loading from "../../partials/Loading/Loading";
+import Title from "../../partials/Title";
+import Services from "../../Services/Services";
 import "./Home.css";
 
 const Home = () => {
@@ -17,19 +20,20 @@ const Home = () => {
     axios
       .get("http://localhost:4000/blog")
       .then((res) => setBlog(res.data));
-  }, [project, blog]);
+  }, project, blog);
 
   return (
     <div className="homePage_area">
       <Header home />
-      <div className="projectHome latestProject">
+      <Services/>
+      <div className="projectHome latestProject section_padding">
         <Container>
           <div className="homeHeading">
-            <h2>Latest Projects</h2>
+            <Title h2 heading>Latest Projects</Title>
           </div>
           <Row>
             {
-                project.length === 0 ? <h1 style={{color: '#fff'}}>Loading...</h1> : 
+                project.length === 0 ? <Loading/> : 
                 project.slice(0,3).map((pro) => (
                     <Col md={4}>
                       <div className="singleItem">
@@ -49,14 +53,14 @@ const Home = () => {
         </Container>
       </div>
       {/* Project Home Page End */}
-      <div className="projectHome latestBlog">
+      <div className="projectHome latestBlog section_padding">
         <Container>
           <div className="homeHeading ">
-            <h2>Latest Blogs</h2>
+            <Title h2 heading>Latest Blogs</Title>
           </div>
           <Row>
             {
-                blog.length === 0 ? <h1>Loading...</h1> :
+                blog.length === 0 ? <Loading/> :
                 blog.slice(0,3).map((pro) => (
                     <Col md={4}>
                       <div className="singleItem">

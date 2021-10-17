@@ -15,8 +15,11 @@ const Navigation = () => {
             <Nav.Link className="menuItem" href="/">
               Home
             </Nav.Link>
-            <Nav.Link className="menuItem" href="/project">
-              Project
+            <Nav.Link className="menuItem" href="/web">
+              Web App
+            </Nav.Link>
+            <Nav.Link className="menuItem" href="/mobile">
+              Mobile App
             </Nav.Link>
             <Nav.Link className="menuItem" href="/blog">
               Blog

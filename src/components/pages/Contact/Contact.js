@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Header from "../../Header/Header";
 import "./Contact.css";
-import Form from "./Form/Form";
+import ContactForm from "./ContactForm/ContactForm";
 
 // import Aos from 'aos'
 // import "aos/dist/aos.css";
@@ -21,7 +21,7 @@ const Contact = () => {
             <Col md={7}>
               <h3 className="contactHeading">Contact By the Message</h3>
               <div className="emailMassage">
-                <Form></Form>
+              <ContactForm/>
               </div>
             </Col>
             <Col md={1}>

@@ -25,7 +25,7 @@ const ControlledCarousel = () => {
                         <Col md={6}>
                             <div className="sliderContent">
                                 <SubTitle h4 >Hi! I am</SubTitle>
-                                <Title h2 slider >Ariful Islam</Title>
+                                <Title h2 heading>Md. Ariful Islam</Title>
                                 <p>I'm full stack web developer. I am design any type of website like as Personal, Woo-commerce, Schools, Bussiness and many others. Spacilly I am a web developer. I develop the website with R HTML, CSS, JavaScript, React, Node.js etc. Mostly for my development I use github platform. If you design or develop your website you can call me..</p>
                             </div>
                         </Col>
@@ -43,7 +43,7 @@ const ControlledCarousel = () => {
                         <Col md={6}>
                             <div className="sliderContent">
                                 <SubTitle h4 >Using Web Development Language</SubTitle>
-                                <Title h2 slider>React Web Developer</Title>
+                                <Title h2 heading>React Web Developer</Title>
                                 <p>
                                     <b>Expertise:</b> React.js, JavaScript, ES6, Fortran Material-UI, SPA, Bootstrap-4, HTML5, CSS3 <br/>
                                     <b>Comfortable:</b> Redux.js, Node.js, Express.js, MongoDB, JSON <br/>
@@ -65,7 +65,7 @@ const ControlledCarousel = () => {
                         <Col md={6}>
                             <div className="sliderContent">
                                 <SubTitle h4 > Using for Development</SubTitle>
-                                <Title h2 slider >Web DesignTools</Title>
+                                <Title h2 heading>Web DesignTools</Title>
                                 <p>GIT, Sublime-text 3, Brackets, Visual-Studio Code, Netlify, HiroKu, Firebase, Chrome Dev Tool</p>
                             </div>
                         </Col>

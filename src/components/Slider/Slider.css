@@ -12,7 +12,7 @@
 }
 .sliderContent h4 {
   font-size: 30px;
-  color: #d67371;
+  color: #fa7370;
   font-weight: 500;
 }
 
@@ -21,14 +21,14 @@
   font-weight: 700;
   text-transform: uppercase;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #1f5775;
+  color: #fff;
   letter-spacing: -3px;
   margin-left: 30px;
 }
 
 .sliderContent p {
   font-size: 14px;
-  color: #033507;
+  color: #0bce1c;
   font-weight: 500;
   line-height: 20px;
 }

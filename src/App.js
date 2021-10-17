@@ -8,6 +8,7 @@ import About from './components/pages/About/About';
 import Blog from './components/pages/Blog/Blog';
 import Contact from './components/pages/Contact/Contact';
 import Home from './components/pages/Home/Home';
+import Moblie from './components/pages/Moblie/Moblie';
 import NotFound from './components/pages/NotFound/NotFound';
 import Project from './components/pages/Project/Project';
 
@@ -32,8 +33,11 @@ function App() {
           <Route  path="/blog">
             <Blog></Blog>
           </Route>
-          <Route  path="/project">
+          <Route  path="/web">
               <Project ></Project>
+          </Route>
+          <Route path="/mobile">
+            <Moblie></Moblie>
           </Route>
           <Route exact path="/">
             <Home ></Home>
