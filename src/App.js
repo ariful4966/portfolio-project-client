@@ -3,12 +3,11 @@ import {
   BrowserRouter as Router, Route, Switch
 } from "react-router-dom";
 import './App.css';
-import Footer from './components/Footer/Footer';
 import About from './components/pages/About/About';
 import Blog from './components/pages/Blog/Blog';
 import Contact from './components/pages/Contact/Contact';
 import Home from './components/pages/Home/Home';
-import Moblie from './components/pages/Moblie/Moblie';
+import Mobile from './components/pages/Mobile/Mobile';
 import NotFound from './components/pages/NotFound/NotFound';
 import Project from './components/pages/Project/Project';
 
@@ -37,7 +36,7 @@ function App() {
               <Project ></Project>
           </Route>
           <Route path="/mobile">
-            <Moblie></Moblie>
+            <Mobile></Mobile>
           </Route>
           <Route exact path="/">
             <Home ></Home>
@@ -46,7 +45,6 @@ function App() {
             <NotFound></NotFound>
           </Route>
         </Switch>
-        <Footer ></Footer>
       </Router>
   );
 }

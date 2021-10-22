@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import logo from "../../images/logo.png";
+import "./Navigation.css";
 
 const Navigation = () => {
   return (
@@ -11,7 +12,7 @@ const Navigation = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
+          <Nav className="ms-auto">
             <Nav.Link className="menuItem" href="/">
               Home
             </Nav.Link>

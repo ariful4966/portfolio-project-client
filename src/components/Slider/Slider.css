@@ -12,18 +12,19 @@
 }
 .sliderContent h4 {
   font-size: 30px;
-  color: #fa7370;
+  color: #176eb6;
   font-weight: 500;
+  text-shadow: 1px 1px #000;
 }
 
 .sliderContent h2 {
   font-size: 40px;
   font-weight: 700;
   text-transform: uppercase;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #fff;
-  letter-spacing: -3px;
-  margin-left: 30px;
+  font-family: "Lobster Two", cursive;
+  color: rgb(231, 16, 16);
+
+  font-size: 50px;
 }
 
 .sliderContent p {

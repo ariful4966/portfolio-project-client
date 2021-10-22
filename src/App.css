@@ -1,6 +1,12 @@
-.page_padding {
-  padding: 50px 0;
-}
+/* font-family: 'Lobster', cursive;
+font-family: 'Lobster Two', cursive;
+font-family: 'Roboto', sans-serif; */
+
 .section_padding {
   padding: 50px 0;
+}
+
+.masterBtn {
+  background: "#0e3453" !important;
+  color: "#fff" !important;
 }

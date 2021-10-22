@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
+import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
+import Loading from "../../partials/Loading/Loading";
 import BlogItem from "./BlogItem/BlogItem";
 
 const Blog = () => {
   const [blog, setBlog] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/blog")
+    fetch("https://web-portfolio-server.herokuapp.com/blog")
       .then((res) => res.json())
       .then((data) => {
         setBlog(data);
@@ -15,15 +17,19 @@ const Blog = () => {
   return (
     <div className="blogPage latestBlog ">
       <Header />
-      <div className="page_padding">
+      <div className="section_padding">
         <Container>
           <Row>
-            {blog.map((blog) => (
-              <BlogItem blog={blog}></BlogItem>
-            ))}
+            {
+              blog.length === 0 ? <Loading/> 
+              : blog.map((blog) => (
+                <BlogItem blog={blog}></BlogItem>
+              ))
+            }
           </Row>
         </Container>
       </div>
+      <Footer/>
     </div>
   );
 };

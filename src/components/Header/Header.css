@@ -3,11 +3,12 @@
 }
 
 a.menuItem {
-  color: #d67371 !important;
+  color: #e54d12 !important;
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
   transition: 0.5s ease;
+  text-shadow: 1px 1px #f3b3b3;
 }
 
 .headerOverlay {
