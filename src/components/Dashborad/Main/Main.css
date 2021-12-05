@@ -1,0 +1,11 @@
+.dashbord_main {
+    background: linear-gradient(
+45deg, #06176a, #40ddce);
+height: 100vh;
+}
+
+.dashboard_content {
+    background: #fff;
+    border-radius: 10px;
+    height: 100%;
+}
