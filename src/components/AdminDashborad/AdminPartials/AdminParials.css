@@ -1,0 +1,14 @@
+.page_title {
+    padding: 10px;
+    background: linear-gradient(to bottom, #6ccbc5, #0f256d);
+    border-radius: 10px;
+}
+
+.page_title h2 {
+    font-size: 50px;
+    font-family: 'Lobster Two';
+    font-weight: 800;
+    color: greenyellow;
+    text-shadow: 1px 1px #ab06ef;
+    margin-left: 50px;
+}

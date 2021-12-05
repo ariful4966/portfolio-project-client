@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router, Route, Switch
 } from "react-router-dom";
 import './App.css';
-import Main from './components/Dashborad/Main/Main';
+import Main from './components/AdminDashborad/Main/Main';
 import About from './components/pages/About/About';
 import Blog from './components/pages/Blog/Blog';
 import Contact from './components/pages/Contact/Contact';
