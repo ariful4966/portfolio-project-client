@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
-
-import { Container, Row, Col } from 'react-bootstrap';
+import { faFacebookF, faGithub, faLinkedinIn, faTwitter, faWeebly } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faFacebookF, faLinkedinIn, faGithub, faGooglePlusSquare, faGooglePlusG, faWeebly } from '@fortawesome/free-brands-svg-icons'
-
+import React, { useEffect, useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import Title from '../partials/Title';
 import './Footer.css';
+
+
 
 const Footer = () => {
 
@@ -13,7 +14,7 @@ const Footer = () => {
     const [blog, setBlog] = useState([]);
     const blogs = blog.slice(0,3);
     useEffect(() => {
-        fetch('https://portfolio-server-00.herokuapp.com/projects')
+        fetch('https://web-portfolio-server.herokuapp.com/project')
             .then(res => res.json())
             .then(data => {
                 setProject(data);
@@ -21,7 +22,7 @@ const Footer = () => {
     }, []);
 
     useEffect(() => {
-        fetch('https://portfolio-server-00.herokuapp.com/blogs')
+        fetch('https://web-portfolio-server.herokuapp.com/blog')
             .then(res => res.json())
             .then(data => {
                 
@@ -34,11 +35,11 @@ const Footer = () => {
                 <Row>
                     <Col md={4}>
                         <div className="footer_widget">
-                            <h4 className="footer_heading">Project</h4>
+                            <Title h4 heading footer="footer_heading" >Project</Title>
                             <div className="footer_detail">
                                 <ul>
                                     {
-                                        projects.map(pro => <li><a href={pro.url} target="_blank">{pro.name}</a></li>)
+                                        projects.map(pro => <li key={pro._id}><a href={pro.url} rel="_blank" >{pro.name}</a></li>)
                                     }
                                 </ul>
                             </div>
@@ -46,11 +47,11 @@ const Footer = () => {
                     </Col>
                     <Col md={4}>
                         <div className="footer_widget">
-                            <h4 className="footer_heading">Blog</h4>
+                            <Title h4 heading footer="footer_heading">Blog</Title>
                             <div className="footer_detail">
                                 <ul>
                                     {
-                                        blogs.map(pro => <li><a href={pro.url} target="_blank">{pro.name}</a></li>)
+                                        blogs.map(pro => <li key={pro._id}><a href={pro.url} >{pro.name}</a></li>)
                                     }
                                 </ul>
                             </div>
@@ -58,7 +59,7 @@ const Footer = () => {
                     </Col>
                     <Col md={4}>
                         <div className="footer_widget">
-                            <h4 className="footer_heading">Social Media</h4>
+                            <Title h4 heading footer="footer_heading">Social Media</Title>
                             <div className="footer_detail socialMedia">
                                 <ul>
                                     <li><a href="https://www.facebook.com/Md.Ariful.Islam4082" target="_blank"><FontAwesomeIcon icon={faFacebookF} /></a></li>
