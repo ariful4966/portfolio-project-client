@@ -13,7 +13,6 @@ import '../AdminPartials/AdminParials.css'
 
 const Main = () => {
     const match= useRouteMatch()
-    console.log(match);
     const [pageTitle, setPageTitle]=useState('Dashboard')
     const menuItem = [
         {

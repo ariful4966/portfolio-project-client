@@ -1,11 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Footer from '../../Footer/Footer';
-import Header from "../../Header/Header";
+import Footer from '../../partials/Footer/Footer';
+import Header from "../../partials/Header/Header";
 import Loading from "../../partials/Loading/Loading";
 import Title from "../../partials/Title";
-import Services from "../../Services/Services";
+import Services from "../../partials/Services/Services";
 import "./Home.css";
 
 const Home = () => {
@@ -35,7 +35,7 @@ const Home = () => {
             {
               project.length === 0 ? <Loading /> :
                 project.slice(0, 3).map((pro) => (
-                  <Col md={4}>
+                  <Col md={4} key={pro._id}>
                     <div className="singleItem">
                       <div className="singlePic">
                         <img src={pro.img} alt="" />
@@ -62,7 +62,7 @@ const Home = () => {
             {
               blog.length === 0 ? <Loading /> :
                 blog.slice(0, 3).map((pro) => (
-                  <Col md={4}>
+                  <Col md={4} key={pro._id}>
                     <div className="singleItem">
                       <div className="singlePic">
                         <img src={pro.img} alt="" />

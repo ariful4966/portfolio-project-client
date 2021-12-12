@@ -13,11 +13,16 @@
     "axios": "^0.19.2",
     "bootstrap": "5.1.1",
     "firebase": "^7.15.0",
+    "jwt-decode": "^3.1.2",
     "react": "^16.13.1",
     "react-bootstrap": "^2.0.0-rc.1",
+    "react-cookie": "^4.1.1",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.2.6",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "redux": "^4.1.2",
+    "universal-cookie": "^4.0.4"
   },
   "scripts": {
     "start": "react-scripts start",

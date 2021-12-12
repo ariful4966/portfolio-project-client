@@ -1,0 +1,12 @@
+.userPic {
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 1px 1px 1px #000
+}
+
+.userPic img {
+    width: 100%;
+    display: block;
+}

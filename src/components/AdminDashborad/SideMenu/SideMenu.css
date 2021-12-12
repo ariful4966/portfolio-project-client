@@ -35,3 +35,7 @@
 .logout a {
     margin-left: 30px;
 }
+.logout {
+    position: fixed;
+    bottom: 5%;
+}

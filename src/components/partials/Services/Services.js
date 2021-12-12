@@ -1,10 +1,10 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import mobile from "../../images/mobile.png";
-import server from "../../images/server.png";
-import web from "../../images/web.png";
-import Paragraph from "../partials/Paragraph";
-import Title from "../partials/Title";
+import mobile from "../../../assets/images/mobile.png";
+import server from "../../../assets/images/server.png";
+import web from "../../../assets/images/web.png";
+import Paragraph from "../Paragraph";
+import Title from "../Title";
 
 const serviceData = [
   {

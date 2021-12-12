@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
-import Footer from "../../Footer/Footer";
-import Header from "../../Header/Header";
+import Footer from "../../partials/Footer/Footer";
+import Header from "../../partials/Header/Header";
 import Loading from "../../partials/Loading/Loading";
 import BlogItem from "./BlogItem/BlogItem";
 

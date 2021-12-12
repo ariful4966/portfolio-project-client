@@ -1,65 +1,195 @@
 import React, { useState } from "react";
 import { Form, Row, Col, FloatingLabel, Button } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import PostForm from "./PostForm";
+import Cookies from "universal-cookie";
+import "./CreatePost.css";
 
 const CreatePost = () => {
   const [post, setPost] = useState({
     title: "",
-    about: "",
+    body: "",
     webUrl: "",
     gitUrl: "",
     category: "",
   });
+  const [lang, setLang] = useState([]);
 
-  const handleBlur = (e)=>{
-    const newPost = {...post}
-    newPost[e.target.name]=e.target.value
-    setPost(newPost)
-  }
-  console.log(post);
+  const [selectImage, setSelectImage] = useState({});
+  const [success, setSuccess] = useState({});
+
+  const handleImageChange = (e) => {
+    const formData = new FormData();
+
+    formData.append("image", e.target.files[0]);
+    formData.append("key", "728e01f09644e0f352e9cc932b5e2b1c");
+
+    fetch("https://api.imgbb.com/1/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        setSelectImage(result);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
+  const [modal, setModal] = useState("");
+
+  const handleBlur = (e) => {
+    const newPost = { ...post };
+    newPost[e.target.name] = e.target.value;
+    setPost(newPost);
+  };
+  const handleLangArray = (e) => {
+    const value = e.target.value.split(" ");
+
+    setLang(value);
+  };
+
+  const user = useSelector((state) => state.user);
+  const cookies = new Cookies();
+  const access_token = cookies.get("ariful");
+  // Web App Post
+  const handleWebPost = (e) => {
+    e.preventDefault();
+
+    post.image = {
+      display_url: selectImage.data.display_url,
+      delete_url: selectImage.data.delete_url,
+    };
+    post.lang = lang;
+
+    fetch("http://localhost:4000/web/create", {
+      method: "POST",
+      body: JSON.stringify(post),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        accesstoken: access_token,
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        setSuccess(json);
+      });
+  };
+
+  // Blog App Post
+  const handleBlogPost = (e) => {
+    e.preventDefault();
+
+    post.image = {
+      display_url: selectImage.data.display_url,
+      delete_url: selectImage.data.delete_url,
+    };
+
+    fetch("http://localhost:4000/blog/create", {
+      method: "POST",
+      body: JSON.stringify(post),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        accesstoken: access_token,
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        setSuccess(json);
+      });
+  };
+
+  //Mobile App Post
+  const handleMobilePost = (e) => {
+    e.preventDefault();
+
+    post.image = {
+      display_url: selectImage.data.display_url,
+      delete_url: selectImage.data.delete_url,
+    };
+    post.lang = lang;
+
+    fetch("http://localhost:4000/mobile/create", {
+      method: "POST",
+      body: JSON.stringify(post),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        accesstoken: access_token,
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        setSuccess(json);
+        
+      });
+  };
   return (
     <div>
-      <Form>
-        <Form.Group className="mb-3" controlId="title">
-          <Form.Label>Post Title</Form.Label>
-          <Form.Control type="text" placeholder="title" name="title" onBlur={handleBlur}/>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="description">
-          <Form.Label>Description</Form.Label>
-          <Form.Control as="textarea" rows={3} name="about" onBlur={handleBlur}/>
-        </Form.Group>
-        <Form.Group controlId="formFile" className="mb-3" >
-          <Form.Label>Upload Project Image</Form.Label>
-          <Form.Control type="file" />
-        </Form.Group>
-
-        <Row className="g-2">
-          <Col md>
-            <Form.Group className="mb-3" controlId="title">
-              <Form.Label>Website Link</Form.Label>
-              <Form.Control type="text" placeholder="Your Website Link" name="webUrl" onBlur={handleBlur}/>
-            </Form.Group>
-          </Col>
-          <Col md>
-            <Form.Group className="mb-3" controlId="title">
-              <Form.Label>GitHub Link</Form.Label>
-              <Form.Control type="text" placeholder="Your GitHub Link" name="gitUrl" onBlur={handleBlur}/>
-            </Form.Group>
-          </Col>
-        </Row>
-        <Form.Group controlId="formFile" className="mb-3">
-          <Form.Label>Select Your Project category</Form.Label>
-          <Form.Select aria-label="Default select example" name="category" onBlur={handleBlur}>
-          <option>Open this select menu</option>
-          <option value="ecomarce">eComarce</option>
-          <option value="blog">Blog</option>
-          <option value="protfolio">Protfolio</option>
-        </Form.Select>
-        </Form.Group>
-        
-        <Button variant="primary" type="submit">
-          Submit
+      <div className="tab_area d-flex justify-content-center">
+        <Button
+          className="m-5"
+          onClick={() => {
+            setModal("Web");
+          }}
+        >
+          Create Web Post
         </Button>
-      </Form>
+        <Button
+          className="m-5"
+          onClick={() => {
+            setModal("Blog");
+          }}
+        >
+          Create Blog Post
+        </Button>
+        <Button
+          className="m-5"
+          onClick={() => {
+            setModal("Mobile");
+          }}
+        >
+          Create Mobile Post
+        </Button>
+      </div>
+
+      <div className="">
+        {modal === "Web" && (
+          <PostForm
+            handleBlur={handleBlur}
+            handleImageChange={handleImageChange}
+            setModal={setModal}
+            modal={modal}
+            handleWebPost={handleWebPost}
+            selectImage={selectImage}
+            handleLangArray={handleLangArray}
+            success={success}
+          />
+        )}
+        {modal === "Blog" && (
+          <PostForm
+            handleBlur={handleBlur}
+            handleImageChange={handleImageChange}
+            setModal={setModal}
+            modal={modal}
+            handleBlogPost={handleBlogPost}
+            selectImage={selectImage}
+            success={success}
+          />
+        )}
+        {modal === "Mobile" && (
+          <PostForm
+            handleBlur={handleBlur}
+            handleImageChange={handleImageChange}
+            setModal={setModal}
+            modal={modal}
+            handleMobilePost={handleMobilePost}
+            selectImage={selectImage}
+            handleLangArray={handleLangArray}
+            success={success}
+          />
+        )}
+      </div>
     </div>
   );
 };

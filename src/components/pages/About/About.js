@@ -1,8 +1,8 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import admin from "../../../images/02.png";
-import Footer from "../../Footer/Footer";
-import Header from "../../Header/Header";
+import admin from "../../../assets/images/02.png";
+import Footer from "../../partials/Footer/Footer";
+import Header from "../../partials/Header/Header";
 import "./About.css";
 
 const About = () => {

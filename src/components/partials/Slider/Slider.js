@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Carousel, Col, Container, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router';
-import SubTitle from '../partials/SubTitle';
-import Title from '../partials/Title';
+import SubTitle from '../SubTitle';
+import Title from '../Title';
 import './Slider.css';
 
 

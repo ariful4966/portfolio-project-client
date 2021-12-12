@@ -1,8 +1,15 @@
-import { faPlusSquare, faReply, faSignOutAlt, faTh, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHome,
+  faPlusSquare,
+  faReply,
+  faSignOutAlt,
+  faTh,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link, useRouteMatch } from "react-router-dom";
-import './SideMenu.css'
+import "./SideMenu.css";
 
 const SideMenu = ({ menu, setPageTitle }) => {
   const match = useRouteMatch();
@@ -12,24 +19,27 @@ const SideMenu = ({ menu, setPageTitle }) => {
       <ul>
         {menu.map((mn) => (
           <li>
-            <Link to={`${match.url}${mn.url}`} onClick={()=>setPageTitle(`${mn.title}`)}>
+            <Link
+              to={`${match.url}${mn.url}`}
+              onClick={() => setPageTitle(`${mn.title}`)}
+            >
               <FontAwesomeIcon icon={mn.icon} />
               <label>{mn.menu}</label>
             </Link>
           </li>
         ))}
-
       </ul>
-      <div className="logout">
+      <div className="logout d-flex" style={{'flexDirection':"column"}}>
+        <Link to="/">
+          <FontAwesomeIcon icon={faHome} />
+          <label>Home</label>
+        </Link>
         <Link>
-          <FontAwesomeIcon icon={faReply}/>
+          <FontAwesomeIcon icon={faReply} />
           <label>Logout</label>
         </Link>
       </div>
     </div>
-
-
-        
   );
 };
 
