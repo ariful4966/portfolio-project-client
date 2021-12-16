@@ -1,4 +1,13 @@
-.singleProject {
-  box-shadow: 1px 1px 5px grey;
-  margin-bottom: 25px;
+.singleDetail a,
+.singleDetail span {
+  background: #645fef;
+  color: #fff;
+  margin: 5px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.singleDetail a svg {
+  font-size: 20px;
 }

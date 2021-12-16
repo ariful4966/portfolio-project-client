@@ -3,55 +3,49 @@ import {
   faGithub,
   faLinkedinIn,
   faTwitter,
-  faWeebly,
+  faWeebly
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Title from "../Title";
 import "./Footer.css";
 import FooterSvg from "./FooterSvg";
 
 const Footer = () => {
-  const [project, setProject] = useState([]);
-  const projects = project.slice(0, 3);
-  const [blog, setBlog] = useState([]);
-  const blogs = blog.slice(0, 3);
-  useEffect(() => {
-    fetch("https://web-portfolio-server.herokuapp.com/project")
-      .then((res) => res.json())
-      .then((data) => {
-        setProject(data);
-      });
-  }, []);
-
-  useEffect(() => {
-    fetch("https://web-portfolio-server.herokuapp.com/blog")
-      .then((res) => res.json())
-      .then((data) => {
-        setBlog(data);
-      });
-  }, []);
   return (
     <>
-    <FooterSvg/>
+      <FooterSvg />
       <div className="footer_area section_bg">
         <Container>
           <Row>
             <Col md={4}>
               <div className="footer_widget">
                 <Title h4 heading footer="footer_heading">
-                  Project
+                  Achievement
                 </Title>
                 <div className="footer_detail">
                   <ul>
-                    {projects.map((pro) => (
-                      <li key={pro._id}>
-                        <a href={pro.url} rel="_blank">
-                          {pro.name}
-                        </a>
-                      </li>
-                    ))}
+                    <li>
+                      <a
+                        href={
+                          "https://drive.google.com/file/d/1euBAHJoumrkxxs76L0p-MunhQeRpVMjO/view?usp=sharing"
+                        }
+                        target={"_blank"}
+                      >
+                        Complate React Web Development Course
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href={
+                          "https://drive.google.com/file/d/1N5bTLyQnoM17gU7AtTtkspZ2y9wIUeda/view?usp=sharing"
+                        }
+                        target={"_blank"}
+                      >
+                        Black-Belt of Web Development
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -59,15 +53,30 @@ const Footer = () => {
             <Col md={4}>
               <div className="footer_widget">
                 <Title h4 heading footer="footer_heading">
-                  Blog
+                  About Website
                 </Title>
                 <div className="footer_detail">
                   <ul>
-                    {blogs.map((pro) => (
-                      <li key={pro._id}>
-                        <a href={pro.url}>{pro.name}</a>
-                      </li>
-                    ))}
+                    <li>
+                      <a
+                        href={
+                          "https://github.com/ariful4966/portfolio-project-client"
+                        }
+                        target={"_blank"}
+                      >
+                        Client Site Code
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href={
+                          "https://github.com/ariful4966/portfolio-project-server"
+                        }
+                        target={"_blank"}
+                      >
+                        Server Site Code
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -81,34 +90,40 @@ const Footer = () => {
                   <ul>
                     <li>
                       <a
-                        href="https://www.facebook.com/Md.Ariful.Islam4082"
-                        target="_blank"
+                        href={"https://www.facebook.com/Md.Ariful.Islam4082"}
+                        target={"_blank"}
                       >
                         <FontAwesomeIcon icon={faFacebookF} />
                       </a>
                     </li>
                     <li>
                       <a
-                        href=" https://www.linkedin.com/in/ariful-islam82/"
-                        target="_blank"
+                        href={"https://www.linkedin.com/in/ariful-islam82/"}
+                        target={"_blank"}
                       >
                         <FontAwesomeIcon icon={faLinkedinIn} />
                       </a>
                     </li>
                     <li>
-                      <a href="https://github.com/ariful4966" target="_blank">
+                      <a
+                        href={"https://github.com/ariful4966"}
+                        target={"_blank"}
+                      >
                         <FontAwesomeIcon icon={faGithub} />
                       </a>
                     </li>
                     <li>
-                      <a href="https://twitter.com/ariful4082" target="_blank">
+                      <a
+                        href={"https://twitter.com/ariful4082"}
+                        target={"_blank"}
+                      >
                         <FontAwesomeIcon icon={faTwitter} />
                       </a>
                     </li>
                     <li>
                       <a
-                        href="https://ariful-islam66.firebaseapp.com/"
-                        target="_blank"
+                        href={"https://ariful-islam66.firebaseapp.com/"}
+                        target={"_blank"}
                       >
                         <FontAwesomeIcon icon={faWeebly} />
                       </a>

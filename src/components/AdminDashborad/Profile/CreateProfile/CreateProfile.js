@@ -1,18 +1,14 @@
-import React, { useState } from "react";
-import { Button, Form, Row, Col, FloatingLabel } from "react-bootstrap";
-import "./CreateProfile.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import { useDispatch, useSelector } from "react-redux";
-import { getProfileInput } from "../../../../redux/actions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
+import { Button, Col, FloatingLabel, Form, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import Cookies from 'universal-cookie';
+import "./CreateProfile.css";
 const cookies = new Cookies();
 
 const CreateProfile = ({ closeModal }) => {
-  const { user, profile } = useSelector((state) => state);
-  const dispatch = useDispatch();
-  const [link, setLink] = useState({});
-  const [address, setAddress] = useState({});
+  const { user } = useSelector((state) => state);
   const [profiles, setProfiles] = useState({
     name: "",
     email: "",
@@ -40,7 +36,7 @@ const CreateProfile = ({ closeModal }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    fetch("http://localhost:4000/profile/create", {
+    fetch("https://web-portfolio-server.herokuapp.com/profile/create", {
       method: "POST",
       body: JSON.stringify(profiles),
       headers: {

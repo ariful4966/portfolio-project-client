@@ -1,95 +1,164 @@
-import React, { useState } from 'react';
-import { Button, Carousel, Col, Container, Row } from 'react-bootstrap';
-import { useHistory } from 'react-router';
-import SubTitle from '../SubTitle';
-import Title from '../Title';
-import './Slider.css';
+import React from "react";
+import { Button, Col, Row } from "react-bootstrap";
+// import Swiper core and required modules
+import SwiperCore, { Autoplay, EffectCoverflow, Pagination } from "swiper";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
+import fullStack from "../../../assets/images/slider/fullStack.png";
+import mobile from "../../../assets/images/slider/mobile .png";
+import server from "../../../assets/images/slider/server.png";
+import website from "../../../assets/images/slider/webApp.png";
+import Paragraph from "../Paragraph";
+import SubTitle from "../SubTitle";
+import Title from "../Title";
+import "./Slider.css";
 
+// install Swiper modules
+SwiperCore.use([EffectCoverflow, Pagination, Autoplay]);
 
+const Slider = () => {
+  const handleMoreBtn = () => {};
 
+  return (
+    <>
+      <Swiper
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={"auto"}
+        coverflowEffect={{
+          rotate: 45,
+          stretch: 0,
+          depth: 120,
+          modifier: 1.5,
+          slideShadows: true,
+        }}
+        pagination={true}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <Row className="sliderItem align-items-center">
+            <Col md={6}>
+              <div className="sliderContent">
+                <Title h2 heading shadow="#fff">
+                  Web Application Development
+                </Title>
+                <SubTitle h4>Frontend Development Using React JS</SubTitle>
 
-const ControlledCarousel = () => {
-    const [index, setIndex] = useState(0);
-    const history  = useHistory();
+                <Paragraph>
+                  Hi! React is awesome javascript library. React can react a web
+                  application using multiple small components. For that website
+                  will be supper fast. There are many diffrent type of hooks
+                  like useState, useEffect, useParam etc. every hook can
+                  complete her own task. like state handling, data fatching etc.
+                  React can include multiple node packages. Differnce type of
+                  package handle diffrence task. For this reason the developed
+                  react website is faster.
+                </Paragraph>
+                <Button
+                  style={{ background: "#0e3453" }}
+                  onClick={() => handleMoreBtn("web")}
+                >
+                  More Project
+                </Button>
+              </div>
+            </Col>
+            <Col md={6}>
+              <div className="sliderPic">
+                <img src={website} alt="Web Development" />
+              </div>
+            </Col>
+          </Row>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Row className="sliderItem align-items-center">
+            <Col md={6}>
+              <div className="sliderContent">
+                <Title h2 heading shadow="#fff">
+                  Mobile Application Development
+                </Title>
+                <SubTitle h4>UI Design using React Native</SubTitle>
+                <Paragraph>
+                  React-Native is an awesome creation of the React team of
+                  developers. If you can create mobile applications, the
+                  applications will run on both the ISO and Android platforms.
+                  It can create any type of mobile application. React and
+                  react-native are combined in every app. Like handling the
+                  state using the useState hook or get data faching use
+                  useEffect hook
+                </Paragraph>
+                <Button
+                  style={{ background: "#0e3453" }}
+                  onClick={() => handleMoreBtn("mobile")}
+                >
+                  See More..
+                </Button>
+              </div>
+            </Col>
+            <Col md={6}>
+              <div className="sliderPic">
+                <img src={mobile} alt="Mobile App Development" />
+              </div>
+            </Col>
+          </Row>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Row className="sliderItem align-items-center">
+            <Col md={6}>
+              <div className="sliderContent">
+                <Title h2 heading shadow="#fff">
+                  Backend Server Development
+                </Title>
+                <SubTitle h4> Using Node JS and Express JS </SubTitle>
+                <Paragraph>
+                  NodeJS is the most powerful platform in the web world. The
+                  backend server of nodeJS is awesome. It can be a very fast
+                  service of data using only Javascript. They can be added to
+                  many packages of NPM, like mongoose, express, etc. The MongoDB
+                  database can be very useful with this platform. It's a better
+                  experience. Other databases can also be used with this runtime
+                  platform.
+                </Paragraph>
+              </div>
+            </Col>
+            <Col md={6}>
+              <div className="sliderPic">
+                <img src={server} alt="Node Server Development" />
+              </div>
+            </Col>
+          </Row>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Row className="sliderItem align-items-center">
+            <Col md={6}>
+              <div className="sliderContent">
+                <Title h2 heading shadow="#fff">
+                  FullStack Website Development
+                </Title>
+                <SubTitle h4> Frontend+Backend Using React+Node </SubTitle>
+                <Paragraph>
+                UI Design in ReactJS. React is a library. Using this, I can create a single-page web application using the backend API. The Node server generates all control and validation checks based on the user role.I can include the MongoDB database with this. MongoDB is a non-relational database, but for practical purposes, I establish a relationship with another collection.
+                </Paragraph>
+              </div>
+            </Col>
+            <Col md={6}>
+              <div className="sliderPic">
+                <img src={fullStack} alt="Node Server Development" />
+              </div>
+            </Col>
+          </Row>
+        </SwiperSlide>
+      </Swiper>
+    </>
+  );
+};
 
-    const handleSelect = (selectedIndex, e) => {
-        setIndex(selectedIndex);
-    };
-    const handleMoreBtn = (path)=>{
-        history.push(path)
-    }
-
-    return (
-        <Carousel fade activeIndex={index} onSelect={handleSelect}>
-            <Carousel.Item>
-                <Container>
-                    <Row className="sliderItem align-items-center">
-                        <Col md={6}>
-                            <div className="sliderContent">
-                                <Title h2 heading shadow="#fff" >Web Application Development</Title>
-                                <SubTitle h4 >Create Using React JS</SubTitle>
-
-                                <p>I'm full stack web developer. I am design any type of website like as Personal, Woo-commerce, Schools, Bussiness and many others. Spacilly I am a web developer. I develop the website with R HTML, CSS, JavaScript, React, Node.js etc. Mostly for my development I use github platform. If you design or develop your website you can call me..</p>
-                                <Button style={{background:'#0e3453'}} onClick={()=>handleMoreBtn('web')}>More Project</Button>
-                            </div>
-                        </Col>
-                        <Col md={6}>
-                            <div className="sliderPic">
-                                <img src="https://cdni.iconscout.com/illustration/premium/thumb/web-development-3817577-3181531.png" alt="Web Development" />
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </Carousel.Item>
-            <Carousel.Item>
-                <Container>
-                    <Row className="sliderItem align-items-center">
-                        <Col md={6}>
-                            <div className="sliderContent">
-                               
-                                <Title h2 heading shadow="#fff" >Mobile Application Development</Title>
-                                <SubTitle h4 >UI Design using React Native</SubTitle>
-                                <p>
-                                    <b>Expertise:</b> React.js, JavaScript, ES6, Fortran Material-UI, SPA, Bootstrap-4, HTML5, CSS3 <br />
-                                    <b>Comfortable:</b> Redux.js, Node.js, Express.js, MongoDB, JSON <br />
-                                    <b>Familiar:</b> React-Native.js PHP, WordPress, jQuery Plugin, MYSQL , Vue.js, Angular.js<br />
-                                </p>
-                                <Button style={{background:'#0e3453'}} onClick={()=>handleMoreBtn('mobile')}>See More..</Button>
-                            </div>
-                        </Col>
-                        <Col md={6}>
-                            <div className="sliderPic">
-                                <img src="https://cdni.iconscout.com/illustration/premium/thumb/application-development-2496182-2107741.png" alt="Mobile App Development" />
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </Carousel.Item>
-            <Carousel.Item>
-                <Container>
-                    <Row className="sliderItem align-items-center">
-                        <Col md={6}>
-                            <div className="sliderContent">
-                                <Title h2 heading shadow="#fff">Backend Server Development</Title>
-                                <SubTitle h4 > Using Node JS and Express JS </SubTitle>
-                                <p>GIT, Sublime-text 3, Brackets, Visual-Studio Code, Netlify, HiroKu, Firebase, Chrome Dev Tool</p>
-                                <Button style={{background:'#0e3453'}} onClick={()=>handleMoreBtn('')}>See More..</Button>
-                            </div>
-                        </Col>
-                        <Col md={6}>
-                            <div className="sliderPic">
-                                <img src="https://cdni.iconscout.com/illustration/premium/thumb/cryptocurrency-server-2545277-2146162.png" alt="Node Server Development" />
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </Carousel.Item>
-        </Carousel>
-    );
-}
-// render(<ControlledCarousel />);
-
-
-
-
-export default ControlledCarousel;
+export default Slider;

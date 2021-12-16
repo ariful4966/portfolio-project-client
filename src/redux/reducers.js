@@ -1,8 +1,8 @@
 import {
+  BLOG_POST_DATA,
   GET_AUTH_INPUT,
-  GET_COOKIE_USER,
-  GET_PROFILE_INPUT,
-  LOGIN_USER,
+  GET_COOKIE_USER, LOGIN_USER, MOBILE_DATA, USER_PROFILE_INFO,
+  WEBSITE_DATA
 } from "./actions";
 
 const initialState = {
@@ -15,25 +15,8 @@ const initialState = {
   web: [],
   mobile: [],
   blog: [],
-  profile: {
-    name: "",
-    email: "",
-    phone: "",
-    title: "",
-    bio: "",
-    address: {
-      village: "",
-      upozila: "",
-      division: "",
-      country: "",
-    },
-    links: {
-      web_url: "",
-      git_url: "",
-      fb_url: "",
-      ld_url: "",
-    },
-  },
+  
+  profile:{}
 };
 
 const reducsers = (state = initialState, action) => {
@@ -58,17 +41,22 @@ const reducsers = (state = initialState, action) => {
         isLogin: true,
       };
       return { ...state, user: tokenUser };
+      case USER_PROFILE_INFO:
+        const profiles = action.profile.data;
+        return {...state, profiles: profiles};
 
-    case GET_PROFILE_INPUT:
-      // const pro = action.e;
-      console.log(action);
-      // const newProfile = {
-      //   ...state.profile
-      // }
-      // newProfile[pro.target.name]=pro.target.value;
+      case WEBSITE_DATA:
+        const web = action.web.data;
+        return {...state, web: web};
 
-      // return {...state, profile: newProfile}
-      return state;
+        case BLOG_POST_DATA:
+          const blog = action.blog.data;
+          return {...state, blog: blog};
+
+          case MOBILE_DATA: 
+          const mobile = action.mobile.data;
+          return {...state, mobile: mobile};
+    
     default:
       return state;
   }

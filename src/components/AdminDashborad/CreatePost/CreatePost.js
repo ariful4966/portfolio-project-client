@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Form, Row, Col, FloatingLabel, Button } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import PostForm from "./PostForm";
+import { Button } from "react-bootstrap";
 import Cookies from "universal-cookie";
 import "./CreatePost.css";
+import PostForm from "./PostForm";
 
 const CreatePost = () => {
   const [post, setPost] = useState({
@@ -50,7 +49,6 @@ const CreatePost = () => {
     setLang(value);
   };
 
-  const user = useSelector((state) => state.user);
   const cookies = new Cookies();
   const access_token = cookies.get("ariful");
   // Web App Post
@@ -63,7 +61,7 @@ const CreatePost = () => {
     };
     post.lang = lang;
 
-    fetch("http://localhost:4000/web/create", {
+    fetch("https://web-portfolio-server.herokuapp.com/web/create", {
       method: "POST",
       body: JSON.stringify(post),
       headers: {
@@ -86,7 +84,7 @@ const CreatePost = () => {
       delete_url: selectImage.data.delete_url,
     };
 
-    fetch("http://localhost:4000/blog/create", {
+    fetch("https://web-portfolio-server.herokuapp.com/blog/create", {
       method: "POST",
       body: JSON.stringify(post),
       headers: {
@@ -110,7 +108,7 @@ const CreatePost = () => {
     };
     post.lang = lang;
 
-    fetch("http://localhost:4000/mobile/create", {
+    fetch("https://web-portfolio-server.herokuapp.com/mobile/create", {
       method: "POST",
       body: JSON.stringify(post),
       headers: {

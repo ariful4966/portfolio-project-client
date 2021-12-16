@@ -1,15 +1,11 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 import { Redirect, Route } from "react-router";
-import { getCookieUser } from "../../../redux/actions";
 import Cookies from "universal-cookie";
-import decode from 'jwt-decode'
 const cookies = new Cookies();
 
 
 
 export function PrivateRoute({ children, ...rest }) {
-  const user = useSelector((state) => state.user);
   
   
   const token = cookies.get('ariful')

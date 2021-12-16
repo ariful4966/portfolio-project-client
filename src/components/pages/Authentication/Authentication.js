@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import AuthenticationForm from "./AuthenticationForm";
-import logo from "../../../assets/images/logo.png";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router";
-import { useSelector } from "react-redux";
-import "./Authentication.css";
-import Title from "../../partials/Title";
-import { useDispatch } from "react-redux";
 import Cookies from "universal-cookie";
-import { useEffect } from "react";
+import logo from "../../../assets/images/logo.png";
+import Paragraph from '../../partials/Paragraph';
+import Title from "../../partials/Title";
+import "./Authentication.css";
+import AuthenticationForm from "./AuthenticationForm";
 const cookies = new Cookies();
 
 const Authentication = () => {
   const [auth, setAuth] = useState("Login");
+  const [message, setMessage] = useState('');
   let history = useHistory();
   let location = useLocation();
   let user = useSelector((state) => state.user);
@@ -22,7 +22,7 @@ const Authentication = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    await fetch("http://localhost:4000/user/login", {
+    await fetch("https://web-portfolio-server.herokuapp.com/user/login", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
@@ -30,9 +30,9 @@ const Authentication = () => {
       },
     })
       .then((response) => response.json())
-      .then(async(data) => {
-       await cookies.set("ariful", data.accesss_token);
-        console.log(data);
+      .then(async (data) => {
+        await cookies.set("ariful", data.accesss_token);
+        setMessage(data.message);
       });
 
     history.replace(from);
@@ -40,7 +40,7 @@ const Authentication = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
 
-    await fetch("http://localhost:4000/user/signup", {
+    await fetch("https://web-portfolio-server.herokuapp.com/user/signup", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
@@ -48,7 +48,9 @@ const Authentication = () => {
       },
     })
       .then((response) => response.json())
-      .then((json) => console.log(json));
+      .then((json) => {
+        setMessage(json.message);
+      });
   };
   const handleAuthForm = () => {
     if (auth === "Login") {
@@ -58,33 +60,36 @@ const Authentication = () => {
     }
   };
 
-  useEffect(()=>{
 
-  }, [])
 
   return (
-    <div className="authentication_area">
-      <div className="authentication_box">
-        <div className="auth_logo">
-          <img src={logo} alt="LOGO" />
+    <>
+      {
+        message && <Paragraph className="text-success text-center mt-5" size={40}>{message}</Paragraph>
+      }
+      <div className="authentication_area">
+        <div className="authentication_box">
+          <div className="auth_logo">
+            <img src={logo} alt="LOGO" />
+          </div>
+          <div className="authentication_title">
+            <Title h1>{auth}</Title>
+          </div>
+          <div className="authentication_Form">
+            <AuthenticationForm
+              handleLogin={handleLogin}
+              handleSignUp={handleSignUp}
+              auth={auth}
+            />
+          </div>
+          {auth === "Login" ? (
+            <p onClick={handleAuthForm}>Create New Account</p>
+          ) : (
+            <p onClick={handleAuthForm}>Are You already have a account</p>
+          )}
         </div>
-        <div className="authentication_title">
-          <Title h1>{auth}</Title>
-        </div>
-        <div className="authentication_Form">
-          <AuthenticationForm
-            handleLogin={handleLogin}
-            handleSignUp={handleSignUp}
-            auth={auth}
-          />
-        </div>
-        {auth === "Login" ? (
-          <p onClick={handleAuthForm}>Create New Account</p>
-        ) : (
-          <p onClick={handleAuthForm}>Are You already have a account</p>
-        )}
       </div>
-    </div>
+    </>
   );
 };
 

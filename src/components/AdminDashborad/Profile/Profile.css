@@ -1,12 +1,28 @@
 .userPic {
-    width: 100%;
-    border: 1px solid gray;
-    border-radius: 5px;
-    padding: 5px;
-    box-shadow: 1px 1px 1px #000
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 1px 1px 1px #000;
 }
 
 .userPic img {
-    width: 100%;
-    display: block;
+  width: 100%;
+  display: block;
+}
+
+.user_others .social_link a {
+  background: #000;
+  margin: 2px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.user_others .social_link a svg {
+  font-size: 25px;
 }
