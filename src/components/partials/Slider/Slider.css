@@ -45,3 +45,9 @@ body {
 .sliderContent p {
   color: #696969;
 }
+
+@media screen and (max-width: 768px) {
+  .sliderContent p {
+    display: none;
+  }
+}

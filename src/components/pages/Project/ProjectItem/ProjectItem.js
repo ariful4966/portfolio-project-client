@@ -23,7 +23,7 @@ const ProjectItem = (props) => {
             <Title h4 className="itemHeading">
               {title}
             </Title>
-            <Paragraph>{body.slice(0, 120)}...</Paragraph>
+            <Paragraph size={20}>{body.slice(0, 120)}...</Paragraph>
             <a href={url.webUrl} target={"_blank"}>
               {" "}
               <FontAwesomeIcon icon={faWeebly} />

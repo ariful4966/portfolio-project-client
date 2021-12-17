@@ -19,7 +19,7 @@ const Contact = () => {
       <div className="section_padding">
         <Container>
           <Row>
-            <Col md={4}>
+            <Col md={4} className="bg-white shadow p-5">
               <h3 className="contactHeading">Contact info</h3>
               <div className="contactInfo">
                 <p>
@@ -41,7 +41,7 @@ const Contact = () => {
                 <div className="singleBorder"></div>
               </div>
             </Col>
-            <Col md={7}>
+            <Col md={7} className="bg-light shadow p-5">
               <h3 className="contactHeading">Contact By the Message</h3>
               <div className="emailMassage">
                 <ContactForm />

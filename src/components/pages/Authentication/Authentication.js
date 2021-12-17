@@ -11,7 +11,7 @@ const cookies = new Cookies();
 
 const Authentication = () => {
   const [auth, setAuth] = useState("Login");
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState({});
   let history = useHistory();
   let location = useLocation();
   let user = useSelector((state) => state.user);
@@ -32,7 +32,7 @@ const Authentication = () => {
       .then((response) => response.json())
       .then(async (data) => {
         await cookies.set("ariful", data.accesss_token);
-        setMessage(data.message);
+        setMessage(data);
       });
 
     history.replace(from);
@@ -49,7 +49,7 @@ const Authentication = () => {
     })
       .then((response) => response.json())
       .then((json) => {
-        setMessage(json.message);
+        setMessage(json);
       });
   };
   const handleAuthForm = () => {
@@ -59,13 +59,17 @@ const Authentication = () => {
       setAuth("Login");
     }
   };
+  
 
 
 
   return (
     <>
       {
-        message && <Paragraph className="text-success text-center mt-5" size={40}>{message}</Paragraph>
+        message && message.message && <Paragraph className="text-success text-center mt-5" size={40}>{message.message}</Paragraph>
+      }
+      {
+        message && message.error && <Paragraph className="text-danger text-center mt-5" size={40}>{message.error}</Paragraph>
       }
       <div className="authentication_area">
         <div className="authentication_box">
