@@ -36,7 +36,7 @@ const CreateProfile = ({ closeModal }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    fetch("https://web-portfolio-server.herokuapp.com/profile/create", {
+    fetch("https://ruby-zealous-ostrich.cyclic.app/profile/create", {
       method: "POST",
       body: JSON.stringify(profiles),
       headers: {

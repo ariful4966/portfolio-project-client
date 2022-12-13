@@ -40,20 +40,20 @@ function App() {
   }, [token, dispatch]);
 
   useEffect(() => {
-    fetch("https://web-portfolio-server.herokuapp.com/web")
+    fetch("https://ruby-zealous-ostrich.cyclic.app/web")
     .then(json=>json.json())
     .then(data=>{
       dispatch(websiteData(data))
     })
     // blog Data
 
-    fetch("https://web-portfolio-server.herokuapp.com/blog")
+    fetch("https://ruby-zealous-ostrich.cyclic.app/blog")
     .then(json=>json.json())
     .then(data=>{
       dispatch(blogPostData(data))
     })
     //Mobile Data
-    fetch("https://web-portfolio-server.herokuapp.com/mobile")
+    fetch("https://ruby-zealous-ostrich.cyclic.app/mobile")
     .then(json=>json.json())
     .then(data=>{
       dispatch(mobileData(data))

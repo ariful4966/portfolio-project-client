@@ -22,7 +22,7 @@ const Authentication = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    await fetch("https://web-portfolio-server.herokuapp.com/user/login", {
+    await fetch("https://ruby-zealous-ostrich.cyclic.app/user/login", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
@@ -40,7 +40,7 @@ const Authentication = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
 
-    await fetch("https://web-portfolio-server.herokuapp.com/user/signup", {
+    await fetch("https://ruby-zealous-ostrich.cyclic.app/user/signup", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {

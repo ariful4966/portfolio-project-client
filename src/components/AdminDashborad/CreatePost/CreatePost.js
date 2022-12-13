@@ -61,7 +61,7 @@ const CreatePost = () => {
     };
     post.lang = lang;
 
-    fetch("https://web-portfolio-server.herokuapp.com/web/create", {
+    fetch("https://ruby-zealous-ostrich.cyclic.app/web/create", {
       method: "POST",
       body: JSON.stringify(post),
       headers: {
@@ -84,7 +84,7 @@ const CreatePost = () => {
       delete_url: selectImage.data.delete_url,
     };
 
-    fetch("https://web-portfolio-server.herokuapp.com/blog/create", {
+    fetch("https://ruby-zealous-ostrich.cyclic.app/blog/create", {
       method: "POST",
       body: JSON.stringify(post),
       headers: {
@@ -108,7 +108,7 @@ const CreatePost = () => {
     };
     post.lang = lang;
 
-    fetch("https://web-portfolio-server.herokuapp.com/mobile/create", {
+    fetch("https://ruby-zealous-ostrich.cyclic.app/mobile/create", {
       method: "POST",
       body: JSON.stringify(post),
       headers: {

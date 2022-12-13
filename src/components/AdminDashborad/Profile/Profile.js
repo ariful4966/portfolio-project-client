@@ -55,7 +55,7 @@ const Profile = () => {
     user.delete_url = selectedFile.data.delete_url;
     user.display_url = selectedFile.data.display_url;
 
-    fetch("https://web-portfolio-server.herokuapp.com/profile/photo", {
+    fetch("https://ruby-zealous-ostrich.cyclic.app/profile/photo", {
       method: "POST",
       body: JSON.stringify({
         user,
@@ -74,7 +74,7 @@ const Profile = () => {
   };
 
   useEffect(() => {
-    fetch("https://web-portfolio-server.herokuapp.com/profile", {
+    fetch("https://ruby-zealous-ostrich.cyclic.app/profile", {
       headers: {
         accesstoken: token,
       },
