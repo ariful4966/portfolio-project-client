@@ -32,33 +32,107 @@
   bottom: -5px;
   border-radius: 50%;
 }
+.single_service img {
+  width: 100%;
+}
 .singleItem {
   text-align: center;
   border-radius: 5px;
   box-shadow: 1px 1px 5px #000;
   padding: 10px;
+  background: #fff;
+  position: relative;
+}
+
+.singleBlogItem {
+  position: relative;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #000;
+  padding: 10px;
+  background: #fff;
+  display: block;
+  overflow: hidden;
+}
+
+.singleDetail {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transform: scale(0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.6s all ease;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+}
+.singleItem:hover .singleDetail {
+  transform: scale(1);
+}
+.singleBlogItem::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 50%;
+  left: 0;
+  top: -50%;
+  background: rgba(95, 77, 239, 0.7);
+  transition: 0.6s all ease;
+  z-index: 1;
+}
+.singleBlogItem::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 50%;
+  left: 0;
+  bottom: -50%;
+  background: rgba(95, 77, 239, 0.7);
+  transition: 0.6s all ease;
+  z-index: 1;
+}
+.singleBlogItem:hover::before {
+  top: 0;
+}
+.singleBlogItem:hover::after {
+  bottom: 0;
+}
+.singleBlogItem:hover .singleDetail {
+  transform: scale(1);
 }
 
 .singlePic img {
   width: 100%;
   height: 100%;
   display: block;
+  transition: 0.5s all ease;
+  z-index: -1;
 }
-
+.singleItem:hover .singlePic img {
+  transform: scaleY(1.5);
+}
+.singleBlogItem:hover .singlePic img {
+  transform: scaleX(1.5);
+}
 .singlePic {
   /* padding: 10px; */
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .singleDetail h4 {
-  font-size: 25px;
-  color: #4a7186;
+  font-size: 45px;
+  color: red;
   font-weight: 600;
+  font-family: "Lobster Two";
 }
 
 .singleDetail p {
-  color: #033507;
-  font-size: 14px;
+  color: #5f4def;
+  font-size: 20px;
   font-weight: 500;
   line-height: 20px;
 }
@@ -74,7 +148,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #525c66;
+  background: #5f4def;
   left: 0;
   top: 0;
   content: "";
@@ -82,11 +156,12 @@
   z-index: -1;
 }
 .latestBlog .singleDetail {
-  text-align: left;
+  background: transparent;
+  color: #fff;
+  z-index: 5;
 }
-.singleDetail a {
-  color: #ed7b7b;
-  background: #fff;
+.singleDetail a,
+.singleDetail span {
   padding: 5px 10px;
   border-radius: 5px;
   text-decoration: none;
@@ -94,14 +169,6 @@
   transition: 0.5s;
 }
 
-.singleDetail a:hover {
-  background: #ed7b7b;
-  color: #fff;
-}
-.latestProject h4 {
-  color: #fff;
-}
-
-.latestProject p {
+.latestBlog .singleDetail p {
   color: #fff;
 }

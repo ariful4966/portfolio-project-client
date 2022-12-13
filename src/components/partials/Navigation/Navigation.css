@@ -1,0 +1,13 @@
+.navbar-light .navbar-toggler-icon {
+  color: #fff;
+  filter: invert(200%);
+}
+
+.navbar-light .navbar-toggler {
+  border-color: #fff !important;
+}
+
+a.navbar-brand img {
+  width: 100%;
+  display: block;
+}

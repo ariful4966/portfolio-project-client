@@ -1,0 +1,41 @@
+.sideMenu_area ul {
+    list-style: none;
+}
+
+.sideMenu_area ul li svg {
+    color: greenyellow;
+    font-size: 40px;
+}
+
+.sideMenu_area ul li label {
+    font-size: 40px;
+    margin-left: 10px;
+    font-family: 'Lobster Two';
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 0 1px #f50000;
+}
+.sideMenu_area {
+    position: relative;
+}
+
+.logout svg {
+    font-size: 40px;
+    color: orangered;
+}
+
+.logout label {
+    font-size: 40px;
+    font-family: arial;
+    font-weight: 800;
+    color: deepskyblue;
+    margin-left: 10px;
+    text-shadow: 1px 1px pink;
+}
+.logout a {
+    margin-left: 30px;
+}
+.logout {
+    position: fixed;
+    bottom: 5%;
+}

@@ -12,12 +12,19 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "bootstrap": "5.1.1",
+    "emailjs-com": "^3.2.0",
     "firebase": "^7.15.0",
+    "jwt-decode": "^3.1.2",
     "react": "^16.13.1",
     "react-bootstrap": "^2.0.0-rc.1",
+    "react-cookie": "^4.1.1",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.2.6",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "redux": "^4.1.2",
+    "swiper": "6.8.4",
+    "universal-cookie": "^4.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,10 +48,6 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-airbnb-base": "14.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.4.1"
+    "prettier": "^2.5.1"
   }
 }

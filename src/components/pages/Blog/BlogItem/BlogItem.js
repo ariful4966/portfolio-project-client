@@ -1,26 +1,35 @@
+import { faWeebly } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+import Paragraph from "../../../partials/Paragraph";
+import Title from "../../../partials/Title";
 import './BlogItem.css';
 
 const BlogItem = (props) => {
-  const { name, about, img , url} = props.blog;
+  const { title, body, image , website, _id} = props.blog;
+  const history = useHistory();
   return (
-    <Col md={12} lg={6} ms={12} xl={6} className="mb-4" >
-      <div className="singleItem">
-        <Row className="align-items-center" >
-          <Col md={6}>
-            <div className="singleDetail">
-              <h4 className="itemHeading">{name}</h4>
-              <p>{about}</p>
-              <a className="link" target="_blank" src={url}>See More...</a>
-            </div>
-          </Col>
-          <Col md={6}>
-            <div className="singlePic">
-              <img src={img} alt="" />
-            </div>
-          </Col>
-        </Row>
+    <Col md={4} lg={4} ms={12} xl={4} className="mb-4" >
+      <div className="singleBlogItem" >
+        <div className="singlePic">
+          <img src={image.display_url} alt="" />
+        </div>
+        <div className="singleDetail">
+          <div>
+            <Title h4 className="itemHeading">
+              {title}
+            </Title>
+            <Paragraph size={20}>{body.slice(0, 120)}...</Paragraph>
+            <a href={website} target={"_blank"}>
+              {" "}
+              <FontAwesomeIcon icon={faWeebly} />
+            </a>
+            <span onClick={()=>history.push(`${_id}`)}>Read More.</span>
+            
+          </div>
+        </div>
       </div>
     </Col>
   );

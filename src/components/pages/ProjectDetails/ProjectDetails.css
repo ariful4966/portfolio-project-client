@@ -1,0 +1,44 @@
+.pro_url a {
+  background: green;
+  color: #ffff;
+  margin: 5px;
+  padding: 10px;
+  display: inline-block;
+  font-size: 20px;
+  font-family: "Lobster Two";
+  border-radius: 10px;
+}
+.pro_details_area h1 {
+  font-family: "Lobster Two";
+  font-size: 150px;
+  color: #645fef;
+  text-shadow: 1px 1px #09db4a;
+  margin: 5px 0;
+}
+.pro_details_area .pro_date {
+  color: #2cb568;
+  font-weight: 800;
+}
+
+.usesLang h5 {
+  font-size: 30px;
+  font-family: "Lobster Two";
+  color: #4c8208;
+  margin-top: 30px;
+  font-weight: 700;
+}
+
+.usesLang ul {
+  list-style: none;
+}
+
+.usesLang svg {
+  color: red;
+  font-size: 20px;
+}
+
+.usesLang ul li {
+  font-size: 20px;
+  font-weight: 600;
+  color: cadetblue;
+}

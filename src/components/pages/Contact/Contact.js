@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Footer from "../../Footer/Footer";
-import Header from "../../Header/Header";
+import Footer from "../../partials/Footer/Footer";
+import Header from "../../partials/Header/Header";
 import "./Contact.css";
 import ContactForm from "./ContactForm/ContactForm";
 
@@ -19,7 +19,7 @@ const Contact = () => {
       <div className="section_padding">
         <Container>
           <Row>
-            <Col md={4}>
+            <Col md={4} className="bg-white shadow p-5">
               <h3 className="contactHeading">Contact info</h3>
               <div className="contactInfo">
                 <p>
@@ -41,7 +41,7 @@ const Contact = () => {
                 <div className="singleBorder"></div>
               </div>
             </Col>
-            <Col md={7}>
+            <Col md={7} className="bg-light shadow p-5">
               <h3 className="contactHeading">Contact By the Message</h3>
               <div className="emailMassage">
                 <ContactForm />

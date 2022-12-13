@@ -1,28 +1,40 @@
+import { faGithub, faWeebly } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import Paragraph from "../../../partials/Paragraph";
 import Title from "../../../partials/Title";
-import './ProjectItem.css';
+import "./ProjectItem.css";
 
 const ProjectItem = (props) => {
-  const { name, img, url, about } = props.project;
+  const { title, image, url, body, _id } = props.project;
+
+  const history = useHistory();
+
   return (
-    <Col md={12} lg={6} sm={12}>
-      <div className="singleProject">
-        <Row className="align-items-center">
-          <Col md={6}>
-            <div className="singlePic">
-              <img src={img} alt="" />
-            </div>
-          </Col>
-          <Col md={6}>
-            <div className="singleDetail">
-              <Title h4 className="itemHeading">{name}</Title>
-              <Paragraph>{about}</Paragraph>
-              <a href={url}> View Website</a>
-            </div>
-          </Col>
-        </Row>
+    <Col md={4} lg={4} sm={12} className="mb-4">
+      <div className="singleItem" >
+        <div className="singlePic">
+          <img src={image.display_url} alt="" />
+        </div>
+        <div className="singleDetail">
+          <div>
+            <Title h4 className="itemHeading">
+              {title}
+            </Title>
+            <Paragraph size={20}>{body.slice(0, 120)}...</Paragraph>
+            <a href={url.webUrl} target={"_blank"}>
+              {" "}
+              <FontAwesomeIcon icon={faWeebly} />
+            </a>
+            <a href={url.gitUrl} target={"_blank"}>
+              {" "}
+              <FontAwesomeIcon icon={faGithub} />{" "}
+            </a>
+            <span onClick={()=>history.push(`${_id}`)}>Read More.</span>
+          </div>
+        </div>
       </div>
     </Col>
   );

@@ -1,0 +1,34 @@
+.authentication_area {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.authentication_box {
+  width: 500px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  background: linear-gradient(45deg, #123cd3, #05efd9);
+  padding: 20px;
+  color: #fff;
+}
+
+.authentication_title h1 {
+  text-align: center;
+  font-family: "Lobster Two", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-shadow: 1px 1px #855103;
+  color: greenyellow;
+}
+
+@media screen and (max-width: 768px) {
+  .authentication_area {
+    width: 100%;
+  }
+  .authentication_area img {
+    width: 100%;
+  }
+}
